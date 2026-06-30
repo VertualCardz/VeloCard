@@ -6,16 +6,17 @@
     <title>VeloCard Global</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { background-color: #0b0f12; color: #ffffff; display: flex; flex-direction: column; align-items: center; padding: 20px; }
+        body { background-color: #0b0f12; color: #ffffff; display: flex; flex-direction: column; align-items: center; padding: 20px; min-height: 100vh; position: relative; overflow-x: hidden; }
         .header { text-align: center; margin-bottom: 30px; margin-top: 20px; }
-        .header h1 { font-size: 2.3rem; color: #ffffff; text-shadow: 0 0 10px #00ccff; letter-spacing: 2px; }
-        .header p { color: #00ff66; font-size: 0.8rem; margin-top: 10px; letter-spacing: 3px; font-weight: bold; }
+        .header h1 { font-size: 2.3rem; color: #ffffff; text-shadow: 0 0 15px #00ccff; letter-spacing: 2px; }
+        .header p { color: #00ff66; font-size: 0.8rem; margin-top: 10px; letter-spacing: 3px; font-weight: bold; text-shadow: 0 0 8px rgba(0,255,102,0.3); }
         
         /* Main Home Section containing all cards */
         #home-screen { width: 100%; max-width: 360px; display: block; }
 
         /* Card Style */
-        .card { background: linear-gradient(145deg, #13191e, #1a232a); width: 100%; border-radius: 20px; padding: 25px; border: 1px solid rgba(0, 204, 255, 0.15); box-shadow: 0 10px 25px rgba(0,0,0,0.5); margin-bottom: 30px; position: relative; }
+        .card { background: linear-gradient(145deg, #13191e, #1a232a); width: 100%; border-radius: 20px; padding: 25px; border: 1px solid rgba(0, 204, 255, 0.15); box-shadow: 0 10px 25px rgba(0,0,0,0.5); margin-bottom: 30px; position: relative; transition: transform 0.3s ease; }
+        .card:hover { transform: translateY(-5px); border-color: rgba(0, 204, 255, 0.4); }
         .card-type { color: #ff6600; font-size: 1.2rem; font-weight: bold; letter-spacing: 1px; }
         .visa { color: #00ccff; }
         .platinum { color: #ffd700; }
@@ -52,23 +53,53 @@
         .qr-section { background: white; width: 220px; height: 220px; margin: 15px auto 20px auto; padding: 8px; border-radius: 15px; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 15px rgba(255,255,255,0.1); overflow: hidden; }
         .qr-section img { width: 100%; height: 100%; object-fit: cover; display: block; }
         
-        /* Email Input */
+        /* Email & File Inputs */
         .email-box { width: 100%; padding: 12px; background: rgba(255,255,255,0.02); border: 1px solid rgba(0, 204, 255, 0.2); border-radius: 10px; color: white; font-size: 0.95rem; text-align: center; margin-bottom: 15px; outline: none; transition: 0.3s; }
         .email-box:focus { border-color: #00ff66; box-shadow: 0 0 10px rgba(0,255,102,0.2); }
         
-        .btn-check { background: #00ff66; color: #0b0f12; border: none; padding: 15px; width: 100%; border-radius: 12px; font-size: 1rem; font-weight: bold; cursor: pointer; transition: 0.3s; letter-spacing: 0.5px; }
+        /* Custom Screenshot Upload Styling */
+        .screenshot-label { display: block; color: #b3b3b3; font-size: 0.85rem; margin-bottom: 8px; text-align: left; padding-left: 5px; }
+        .file-upload-wrapper { position: relative; margin-bottom: 20px; width: 100%; }
+        .file-input { width: 100%; padding: 12px; background: rgba(255, 102, 0, 0.05); border: 1px dashed rgba(255, 102, 0, 0.4); border-radius: 10px; color: #ff6600; font-size: 0.9rem; cursor: pointer; outline: none; text-align: center; }
+        .file-input::-webkit-file-upload-button { background: #ff6600; color: #fff; border: none; padding: 5px 12px; border-radius: 6px; cursor: pointer; font-weight: bold; margin-right: 10px; }
+
+        .btn-check { background: #00ff66; color: #0b0f12; border: none; padding: 15px; width: 100%; border-radius: 12px; font-size: 1rem; font-weight: bold; cursor: pointer; transition: 0.3s; letter-spacing: 0.5px; box-shadow: 0 4px 15px rgba(0,255,102,0.2); }
         .btn-check:hover { background: #00cc55; }
         .notice-box { background: rgba(0, 204, 255, 0.1); border: 1px solid rgba(0, 204, 255, 0.2); padding: 12px; border-radius: 10px; font-size: 0.8rem; color: #00ccff; line-height: 1.4; margin-top: 15px; text-align: left; }
         .back-btn { background: transparent; color: #888; border: none; font-size: 0.85rem; cursor: pointer; margin-bottom: 20px; display: inline-flex; align-items: center; gap: 5px; transition: 0.2s; }
         .back-btn:hover { color: #fff; }
 
         /* Success Pop-up Style */
-        .success-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(11, 15, 18, 0.96); z-index: 1000; justify-content: center; align-items: center; padding: 20px; }
-        .success-card { background: #13191e; border: 2px solid #00ff66; border-radius: 25px; padding: 35px 25px; text-align: center; max-width: 350px; width: 100%; box-shadow: 0 0 30px rgba(0, 255, 102, 0.2); }
-        .success-icon { font-size: 3.5rem; color: #00ff66; margin-bottom: 15px; }
-        .success-card h2 { font-size: 1.6rem; color: #ffffff; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
-        .success-card p { font-size: 0.95rem; color: #b3b3b3; line-height: 1.5; }
-        .success-card .highlight-email { color: #00ff66; font-weight: bold; display: block; margin-top: 15px; font-size: 0.9rem; word-break: break-all; background: rgba(0,255,102,0.05); padding: 8px; border-radius: 8px; border: 1px solid rgba(0,255,102,0.1); }
+        .success-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(11, 15, 18, 0.96); z-index: 1000; justify-content: center; align-items: center; padding: 20px; overflow-y: auto; }
+        .success-card { background: #13191e; border: 2px solid #00ff66; border-radius: 25px; padding: 30px 20px; text-align: center; max-width: 360px; width: 100%; box-shadow: 0 0 30px rgba(0, 255, 102, 0.2); margin: auto; }
+        .success-icon { font-size: 3rem; color: #00ff66; margin-bottom: 10px; }
+        .success-card h2 { font-size: 1.5rem; color: #ffffff; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+        
+        /* Danger Fake Warning Box */
+        .warning-danger-box { background: rgba(255, 51, 51, 0.07); border: 1px solid rgba(255, 51, 51, 0.3); border-radius: 12px; padding: 12px; margin-bottom: 20px; text-align: left; }
+        .warning-danger-box strong { color: #ff3333; font-size: 0.9rem; display: flex; align-items: center; gap: 5px; margin-bottom: 5px; }
+        .warning-danger-box p { color: #e0e0e0; font-size: 0.8rem; line-height: 1.4; }
+
+        /* New Live Countdown Timer Box */
+        .timer-box { background: rgba(0, 204, 255, 0.05); border: 1px solid rgba(0, 204, 255, 0.2); border-radius: 12px; padding: 14px; margin-bottom: 15px; }
+        .timer-title { font-size: 0.75rem; color: #00ccff; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; font-weight: bold; }
+        .countdown-display { font-size: 1.3rem; font-weight: bold; color: #ffffff; letter-spacing: 1px; }
+
+        .success-card .highlight-email { color: #00ff66; font-weight: bold; display: block; font-size: 0.85rem; word-break: break-all; background: rgba(0,255,102,0.05); padding: 8px; border-radius: 8px; border: 1px solid rgba(0,255,102,0.1); }
+        
+        /* Live Notification Toast Styling */
+        .notification-toast { position: fixed; bottom: -100px; left: 20px; background: rgba(19, 25, 30, 0.95); border: 1px solid #00ccff; border-radius: 12px; padding: 12px 18px; display: flex; align-items: center; gap: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.6); z-index: 9999; transition: bottom 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); max-width: 320px; }
+        .notification-toast.show { bottom: 20px; }
+        .notif-pulse { width: 8px; height: 8px; background: #00ff66; border-radius: 50%; box-shadow: 0 0 8px #00ff66; animation: pulse 1.5s infinite; }
+        .notif-text { font-size: 0.8rem; color: #e0e0e0; line-height: 1.4; }
+        .notif-text strong { color: #00ccff; }
+        .notif-price { color: #00ff66; font-weight: bold; }
+        
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 102, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(0, 255, 102, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 102, 0); }
+        }
     </style>
 </head>
 <body>
@@ -151,13 +182,18 @@
         <p style="color: #888; font-size: 0.85rem; margin-bottom: 15px;">SECURE PAYMENT VIA UPI GATEWAY</p>
         
         <div class="qr-section">
-         <img src="qr.jpg.jpeg" id="qr-img" alt="UPI QR Code">
+            <img src="qr.jpg.jpeg" id="qr-img" alt="UPI QR Code">
+        </div>
+
+        <label class="screenshot-label" for="payment-screenshot">Upload Payment Screenshot *</label>
+        <div class="file-upload-wrapper">
+            <input type="file" id="payment-screenshot" class="file-input" accept="image/*" required>
         </div>
 
         <button onclick="processPayment()" class="btn-check">SUBMIT TRANSACTION DETAILS</button>
 
         <div class="notice-box">
-            <strong>Verification Note:</strong> Enter a valid Gmail address above. After payment, click submit to securely process your registration.
+            <strong>Verification Note:</strong> Enter a valid Gmail address and upload a screenshot of your successful transaction. Click submit to securely process your registration.
         </div>
     </div>
 
@@ -165,13 +201,76 @@
         <div class="success-card">
             <div class="success-icon">✓</div>
             <h2>Congratulations!</h2>
-            <p>Card is successfully purchased.</p>
-            <p style="margin-top: 10px; font-size: 0.85rem; color: #888;">Your virtual card credentials will be delivered to your registered Gmail address within <span style="color:#00ff66; font-weight:bold;">24 to 48 Hours</span>.</p>
+            <p style="margin-bottom: 15px; font-size: 0.95rem; color: #b3b3b3;">Your order has been submitted successfully.</p>
+            
+            <div class="warning-danger-box">
+                <strong>⚠️ महत्वपूर्ण चेतावनी (Warning):</strong>
+                <p>वर्चुअल कार्ड तभी एक्टिवेट किया जाएगा जब आपकी पेमेंट 100% असली (Real) होगी और हमारे बैंक सर्वर द्वारा वेरीफाई हो जाएगी। अगर किसी ने फेक या एडिटेड स्क्रीनशॉट अपलोड किया, तो उसे कोई कार्ड नहीं मिलेगा और उसका डिवाइस हमेशा के लिए ब्लॉक कर दिया जाएगा।</p>
+            </div>
+
+            <div class="timer-box">
+                <div class="timer-title">CARD ACTIVATION ESTIMATED TIME</div>
+                <div class="countdown-display" id="countdown-timer">05d 04h 32m 15s</div>
+            </div>
+
             <span class="highlight-email" id="display-email"></span>
         </div>
     </div>
 
+    <div class="notification-toast" id="purchase-notification">
+        <div class="notif-pulse"></div>
+        <div class="notif-text" id="notif-content">
+            User <strong>Ramesh K.</strong> from <strong>Lucknow</strong> just activated a <span class="notif-price">₹799</span> Visa Card!
+        </div>
+    </div>
+
     <script>
+        // Array containing exactly 20 diverse Indian buyers with targeted card variations
+        const fakeBuyers = [
+            { name: "Ramesh K.", city: "Lucknow", price: "₹799", card: "Visa Card" },
+            { name: "Karan S.", city: "Uttar Pradesh", price: "₹1499", card: "Platinum Card" },
+            { name: "Amit Sharma", city: "Delhi NCR", price: "₹399", card: "Master Card" },
+            { name: "Vikram Kumar", city: "Bihar", price: "₹1499", card: "Platinum Card" },
+            { name: "Rahul J.", city: "Jaipur", price: "₹799", card: "Visa Card" },
+            { name: "Suresh Pal", city: "Madhya Pradesh", price: "₹399", card: "Master Card" },
+            { name: "Deepak M.", city: "Mumbai", price: "₹1499", card: "Platinum Card" },
+            { name: "Akash Yadav", city: "Gorakhpur", price: "₹799", card: "Visa Card" },
+            { name: "Vikas Mishra", city: "Patna", price: "₹399", card: "Master Card" },
+            { name: "Sanjay Dutt", city: "Ranchi", price: "₹1499", card: "Platinum Card" },
+            { name: "Arjun Singh", city: "Haryana", price: "₹799", card: "Visa Card" },
+            { name: "Manish Verma", city: "Punjab", price: "₹399", card: "Master Card" },
+            { name: "Vijay Thapa", city: "Dehradun", price: "₹799", card: "Visa Card" },
+            { name: "Rohit Shrivastav", city: "Varanasi", price: "₹1499", card: "Platinum Card" },
+            { name: "Ajay Dev", city: "Gaya", price: "₹399", card: "Master Card" },
+            { name: "Sunil Choudhary", city: "Jodhpur", price: "₹799", card: "Visa Card" },
+            { name: "Anil Saxena", city: "Agra", price: "₹1499", card: "Platinum Card" },
+            { name: "Vivek Tiwari", city: "Kanpur", price: "₹399", card: "Master Card" },
+            { name: "Priyanahu Raj", city: "Muzaffarpur", price: "₹799", card: "Visa Card" },
+            { name: "Alok Gupta", city: "Bareilly", price: "₹1499", card: "Platinum Card" }
+        ];
+
+        // Function to run and rotate notifications smoothly every 6-7 seconds
+        function triggerLiveNotification() {
+            const toast = document.getElementById('purchase-notification');
+            const content = document.getElementById('notif-content');
+            
+            setInterval(() => {
+                const randomBuyer = fakeBuyers[Math.floor(Math.random() * fakeBuyers.length)];
+                content.innerHTML = `User <strong>${randomBuyer.name}</strong> from <strong>${randomBuyer.city}</strong> just activated a <span class="notif-price">${randomBuyer.price}</span> ${randomBuyer.card}!`;
+                
+                toast.classList.add('show');
+                
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 3500); // Popup stays visible for 3.5 seconds
+
+            }, 6500); // Rotates exactly every 6.5 seconds loop
+        }
+
+        window.onload = function() {
+            triggerLiveNotification();
+        };
+
         function openPayment(cardName, price) {
             document.getElementById('home-screen').style.display = 'none';
             document.getElementById('payment-terminal').style.display = 'block';
@@ -186,16 +285,56 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        // Live Target Countdown Configuration (Strict 5 Days baseline)
+        let totalSeconds = (5 * 24 * 3600) + (4 * 3600) + (32 * 60) + 15; 
+        let timerInterval;
+
+        function startCountdown() {
+            const display = document.getElementById('countdown-timer');
+            
+            timerInterval = setInterval(() => {
+                if (totalSeconds <= 0) {
+                    clearInterval(timerInterval);
+                    display.innerText = "Processing Details...";
+                    return;
+                }
+                
+                totalSeconds--;
+
+                let days = Math.floor(totalSeconds / (24 * 3600));
+                let hours = Math.floor((totalSeconds % (24 * 3600)) / 3600);
+                let minutes = Math.floor((totalSeconds % 3600) / 60);
+                let seconds = totalSeconds % 60;
+
+                let dDisplay = days < 10 ? "0" + days : days;
+                let hDisplay = hours < 10 ? "0" + hours : hours;
+                let mDisplay = minutes < 10 ? "0" + minutes : minutes;
+                let sDisplay = seconds < 10 ? "0" + seconds : seconds;
+
+                display.innerText = `${dDisplay}d ${hDisplay}h ${mDisplay}m ${sDisplay}s`;
+            }, 1000);
+        }
+
         function processPayment() {
             var emailInput = document.getElementById('user-email').value;
+            var screenshotInput = document.getElementById('payment-screenshot').files[0];
             
             if(emailInput.trim() === "" || !emailInput.includes("@")) {
                 alert("Please enter a valid Gmail address to receive card details!");
                 return;
             }
 
+            // Validation Guard: Screenshot mandatory barrier
+            if(!screenshotInput) {
+                alert("कृपया पहले पेमेंट का स्क्रीनशॉट अपलोड करें, उसके बाद ही सबमिट करें!");
+                return;
+            }
+
             document.getElementById('display-email').innerText = "Registered Mail: " + emailInput;
+            document.getElementById('payment-terminal').style.display = 'none';
             document.getElementById('success-screen').style.display = 'flex';
+            
+            startCountdown();
         }
     </script>
 </body>
