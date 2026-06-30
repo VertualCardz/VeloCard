@@ -11,17 +11,14 @@
         .header h1 { font-size: 2.3rem; color: #ffffff; text-shadow: 0 0 15px #00ccff; letter-spacing: 2px; }
         .header p { color: #00ff66; font-size: 0.8rem; margin-top: 10px; letter-spacing: 3px; font-weight: bold; text-shadow: 0 0 8px rgba(0,255,102,0.3); }
         
-        /* Main Home Section containing all cards */
         #home-screen { width: 100%; max-width: 360px; display: block; }
 
-        /* Card Style */
         .card { background: linear-gradient(145deg, #13191e, #1a232a); width: 100%; border-radius: 20px; padding: 25px; border: 1px solid rgba(0, 204, 255, 0.15); box-shadow: 0 10px 25px rgba(0,0,0,0.5); margin-bottom: 30px; position: relative; transition: transform 0.3s ease; }
         .card:hover { transform: translateY(-5px); border-color: rgba(0, 204, 255, 0.4); }
         .card-type { color: #ff6600; font-size: 1.2rem; font-weight: bold; letter-spacing: 1px; }
         .visa { color: #00ccff; }
         .platinum { color: #ffd700; }
         
-        /* Clear Price Tags */
         .card-price { position: absolute; top: 25px; right: 25px; background: #ff6600; padding: 6px 14px; border-radius: 12px; color: #ffffff; font-weight: bold; font-size: 1rem; box-shadow: 0 0 10px rgba(255,102,0,0.4); }
         .visa-price { background: #00ccff; color: #0b0f12; box-shadow: 0 0 10px rgba(0,204,255,0.4); }
         .plat-price { background: #ffd700; color: #0b0f12; box-shadow: 0 0 10px rgba(255,215,0,0.4); }
@@ -38,26 +35,21 @@
         .balance { color: #00ff66 !important; }
         .card-holder { margin-top: 20px; font-size: 0.8rem; color: #888; text-transform: uppercase; letter-spacing: 1px; }
         
-        /* Enhanced Price/Offer Box */
         .price-offer-box { background: rgba(255, 255, 255, 0.03); border: 1px dashed rgba(255, 255, 255, 0.15); border-radius: 12px; padding: 12px; margin-top: 20px; text-align: center; }
         .price-offer-box p { font-size: 0.85rem; color: #b3b3b3; }
         .price-offer-box strong { color: #00ff66; font-size: 1.05rem; }
 
-        /* Buy Button */
         .buy-btn { display: flex; justify-content: center; align-items: center; background: #00ccff; border: none; padding: 14px; border-radius: 12px; margin-top: 12px; cursor: pointer; transition: 0.3s; width: 100%; color: #0b0f12; font-weight: bold; font-size: 1rem; letter-spacing: 1px; box-shadow: 0 4px 15px rgba(0,204,255,0.2); }
         .buy-btn:hover { background: #00ff66; box-shadow: 0 4px 15px rgba(0,255,102,0.3); }
         
-        /* Next Page Payment Section */
         .payment-container { display: none; background: #13191e; width: 100%; max-width: 360px; border-radius: 20px; padding: 25px; border: 1px solid rgba(255, 255, 255, 0.05); text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
         .top-bar { display: flex; justify-content: space-between; margin-bottom: 25px; font-size: 0.9rem; color: #888; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px; }
         .qr-section { background: white; width: 220px; height: 220px; margin: 15px auto 20px auto; padding: 8px; border-radius: 15px; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 15px rgba(255,255,255,0.1); overflow: hidden; }
         .qr-section img { width: 100%; height: 100%; object-fit: cover; display: block; }
         
-        /* Email & File Inputs */
-        .email-box { width: 100%; padding: 12px; background: rgba(255,255,255,0.02); border: 1px solid rgba(0, 204, 255, 0.2); border-radius: 10px; color: white; font-size: 0.95rem; text-align: center; margin-bottom: 15px; outline: none; transition: 0.3s; }
-        .email-box:focus { border-color: #00ff66; box-shadow: 0 0 10px rgba(0,255,102,0.2); }
+        .input-box { width: 100%; padding: 12px; background: rgba(255,255,255,0.02); border: 1px solid rgba(0, 204, 255, 0.2); border-radius: 10px; color: white; font-size: 0.95rem; text-align: center; margin-bottom: 15px; outline: none; transition: 0.3s; }
+        .input-box:focus { border-color: #00ff66; box-shadow: 0 0 10px rgba(0,255,102,0.2); }
         
-        /* Custom Screenshot Upload Styling */
         .screenshot-label { display: block; color: #b3b3b3; font-size: 0.85rem; margin-bottom: 8px; text-align: left; padding-left: 5px; }
         .file-upload-wrapper { position: relative; margin-bottom: 20px; width: 100%; }
         .file-input { width: 100%; padding: 12px; background: rgba(255, 102, 0, 0.05); border: 1px dashed rgba(255, 102, 0, 0.4); border-radius: 10px; color: #ff6600; font-size: 0.9rem; cursor: pointer; outline: none; text-align: center; }
@@ -69,31 +61,26 @@
         .back-btn { background: transparent; color: #888; border: none; font-size: 0.85rem; cursor: pointer; margin-bottom: 20px; display: inline-flex; align-items: center; gap: 5px; transition: 0.2s; }
         .back-btn:hover { color: #fff; }
 
-        /* Success Pop-up Style */
         .success-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(11, 15, 18, 0.96); z-index: 1000; justify-content: center; align-items: center; padding: 20px; overflow-y: auto; }
         .success-card { background: #13191e; border: 2px solid #00ff66; border-radius: 25px; padding: 30px 20px; text-align: center; max-width: 360px; width: 100%; box-shadow: 0 0 30px rgba(0, 255, 102, 0.2); margin: auto; }
         .success-icon { font-size: 3rem; color: #00ff66; margin-bottom: 10px; }
         .success-card h2 { font-size: 1.5rem; color: #ffffff; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
         
-        /* New Information Alert Box for Delivery Notification */
-        .delivery-info-box { background: rgba(0, 204, 255, 0.08); border: 1px dashed #00ccff; border-radius: 12px; padding: 14px; margin-bottom: 15px; text-align: left; }
-        .delivery-info-box p { color: #ffffff; font-size: 0.85rem; line-height: 1.4; }
-        .delivery-info-box strong { color: #00ccff; }
-        .delivery-info-box .days-highlight { color: #00ff66; font-weight: bold; }
+        .professional-delivery-text { background: rgba(0, 204, 255, 0.05); border-left: 3px solid #00ccff; padding: 14px; text-align: left; margin: 18px 0; border-radius: 0 8px 8px 0; }
+        .professional-delivery-text p { font-size: 0.85rem; color: #e5e7eb; line-height: 1.5; }
+        .professional-delivery-text strong { color: #00ccff; }
 
-        /* Danger Warning Box for Fake Payments */
         .warning-danger-box { background: rgba(255, 51, 51, 0.07); border: 1px solid rgba(255, 51, 51, 0.3); border-radius: 12px; padding: 12px; margin-bottom: 20px; text-align: left; }
         .warning-danger-box strong { color: #ff3333; font-size: 0.9rem; display: flex; align-items: center; gap: 5px; margin-bottom: 5px; }
         .warning-danger-box p { color: #e0e0e0; font-size: 0.8rem; line-height: 1.4; }
 
-        /* Countdown Timer Design */
         .timer-box { background: rgba(0, 204, 255, 0.05); border: 1px solid rgba(0, 204, 255, 0.2); border-radius: 12px; padding: 14px; margin-bottom: 15px; }
         .timer-title { font-size: 0.75rem; color: #00ccff; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; font-weight: bold; }
         .countdown-display { font-size: 1.3rem; font-weight: bold; color: #ffffff; letter-spacing: 1px; }
 
-        .success-card .highlight-email { color: #00ff66; font-weight: bold; display: block; font-size: 0.85rem; word-break: break-all; background: rgba(0,255,102,0.05); padding: 8px; border-radius: 8px; border: 1px solid rgba(0,255,102,0.1); }
+        .success-card .highlight-email { color: #00ff66; font-weight: bold; display: block; font-size: 0.85rem; word-break: break-all; background: rgba(0,255,102,0.05); padding: 8px; border-radius: 8px; border: 1px solid rgba(0,255,102,0.1); margin-top: 10px; }
+        .success-card .highlight-name { color: #ffd700; font-size: 0.95rem; font-weight: bold; display: block; margin-bottom: 5px; }
         
-        /* Toast Live Notifications - 6-7 seconds rotation loop */
         .notification-toast { position: fixed; bottom: -100px; left: 20px; background: rgba(19, 25, 30, 0.95); border: 1px solid #00ccff; border-radius: 12px; padding: 12px 18px; display: flex; align-items: center; gap: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.6); z-index: 9999; transition: bottom 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); max-width: 320px; }
         .notification-toast.show { bottom: 20px; }
         .notif-pulse { width: 8px; height: 8px; background: #00ff66; border-radius: 50%; box-shadow: 0 0 8px #00ff66; animation: pulse 1.5s infinite; }
@@ -116,6 +103,7 @@
     </div>
 
     <div id="home-screen">
+        <!-- MasterCard -->
         <div class="card">
             <div class="card-type">MASTER CARD</div>
             <div class="vcc-badge">GLOBAL ACCESS</div>
@@ -127,14 +115,13 @@
                 <div class="detail-box"><label>Status / Type</label><span>ACTIVE | <span class="balance">PREPAID</span></span></div>
             </div>
             <div class="card-holder">JOHN DOE</div>
-            
             <div class="price-offer-box">
                 <p>Pay <strong>₹399</strong> & Get Pre-loaded Balance: <strong>₹5,000</strong></p>
             </div>
-            
             <button class="buy-btn" onclick="openPayment('MasterCard Global Base', '₹399')">Activate Card</button>
         </div>
 
+        <!-- Visa Card -->
         <div class="card">
             <div class="card-type visa">VISA CARD</div>
             <div class="vcc-badge">GLOBAL ACCESS</div>
@@ -146,14 +133,13 @@
                 <div class="detail-box"><label>Status / Type</label><span>ACTIVE | <span class="balance">PREPAID</span></span></div>
             </div>
             <div class="card-holder">ALEX MERCER</div>
-            
             <div class="price-offer-box">
                 <p>Pay <strong>₹799</strong> & Get Pre-loaded Balance: <strong>₹10,000</strong></p>
             </div>
-
             <button class="buy-btn" onclick="openPayment('Visa Gold Premium', '₹799')">Activate Card</button>
         </div>
 
+        <!-- Platinum Card -->
         <div class="card">
             <div class="card-type platinum">PLATINUM CARD</div>
             <div class="vcc-badge">GLOBAL ACCESS</div>
@@ -165,15 +151,14 @@
                 <div class="detail-box"><label>Status / Type</label><span>ACTIVE | <span class="balance">PREPAID</span></span></div>
             </div>
             <div class="card-holder">DAVID VANCE</div>
-            
             <div class="price-offer-box">
                 <p>Pay <strong>₹1499</strong> & Get Pre-loaded Balance: <strong>₹19,000</strong></p>
             </div>
-
             <button class="buy-btn" onclick="openPayment('Platinum VIP Elite', '₹1499')">Activate Card</button>
         </div>
     </div>
 
+    <!-- Payment Container Terminal -->
     <div class="payment-container" id="payment-terminal">
         <button class="back-btn" onclick="goBack()">&larr; Go Back to Cards</button>
         
@@ -183,7 +168,9 @@
         </div>
         
         <p style="color: #888; font-size: 0.85rem; margin-bottom: 12px;">ENTER YOUR DELIVERY DETAILS</p>
-        <input type="email" id="user-email" class="email-box" placeholder="Enter Your Gmail Address" required>
+        
+        <input type="text" id="user-name" class="input-box" placeholder="Enter Your Full Name" required>
+        <input type="email" id="user-email" class="input-box" placeholder="Enter Your Gmail Address" required>
 
         <p style="color: #888; font-size: 0.85rem; margin-bottom: 15px;">SECURE PAYMENT VIA UPI GATEWAY</p>
         
@@ -199,18 +186,23 @@
         <button onclick="processPayment()" class="btn-check">SUBMIT TRANSACTION DETAILS</button>
 
         <div class="notice-box">
-            <strong>Verification Note:</strong> Enter a valid Gmail address and upload a screenshot of your successful transaction. Click submit to securely process your registration.
+            <strong>Verification Note:</strong> Enter a valid Full Name, Gmail address and upload a screenshot of your successful transaction. Click submit to securely process your registration.
         </div>
     </div>
 
+    <!-- Success Pop-up Modal Section -->
     <div class="success-overlay" id="success-screen">
         <div class="success-card">
             <div class="success-icon">✓</div>
             <h2>Congratulations!</h2>
             <p style="margin-bottom: 15px; font-size: 0.95rem; color: #b3b3b3;">Your order has been submitted successfully.</p>
             
-            <div class="delivery-info-box">
-                <p>📩 आपका वर्चुअल वीसीसी कार्ड (VCC Card) और सीक्रेट लॉगिन डिटेल्स आपके द्वारा दिए गए <strong>रजिस्टर्ड जीमेल (Gmail)</strong> एड्रेस पर पेमेंट वेरिफिकेशन पूरा होने के बाद <span class="days-highlight">अगले 5 दिनों के भीतर (Within 5 Days)</span> डिलीवर कर दी जाएगी। कृपया 5 दिन बाद अपना इनबॉक्स और स्पैम फोल्डर जरूर चेक करते रहें।</p>
+            <span class="highlight-name" id="display-name"></span>
+            <span class="highlight-email" id="display-email"></span>
+
+            <!-- Professional English script delivery text box -->
+            <div class="professional-delivery-text">
+                <p>Your registered <strong>Virtual VCC Card</strong> and secure login credentials will be systematically dispatched directly to your verified email address after a standard 5-day internal verification process. Please check your <strong>Inbox and Spam folder after exactly 5 days</strong>.</p>
             </div>
 
             <div class="warning-danger-box">
@@ -222,44 +214,66 @@
                 <div class="timer-title">CARD ACTIVATION ESTIMATED TIME</div>
                 <div class="countdown-display" id="countdown-timer">05d 04h 32m 15s</div>
             </div>
-
-            <span class="highlight-email" id="display-email"></span>
         </div>
     </div>
 
+    <!-- Live Buyer Popups Toast Element -->
     <div class="notification-toast" id="purchase-notification">
         <div class="notif-pulse"></div>
         <div class="notif-text" id="notif-content">
-            User <strong>Ramesh K.</strong> from <strong>Lucknow</strong> just activated a <span class="notif-price">₹799</span> Visa Card!
+            User <strong>Rahul Sharma</strong> from <strong>Delhi</strong> just activated a <span class="notif-price">₹799</span> Visa Card!
         </div>
     </div>
 
     <script>
-        // Exact 20 English-script diverse Indian database matching targeted card layouts
+        // 20 Simple/Real Names + 20 Free Fire Gaming Names (Total 40 perfectly mixed)
         let fakeBuyers = [
-            { name: "Ramesh K.", city: "Lucknow", price: "₹799", card: "Visa Card" },
-            { name: "Karan S.", city: "Uttar Pradesh", price: "₹1499", card: "Platinum Card" },
-            { name: "Amit Sharma", city: "Delhi NCR", price: "₹399", card: "Master Card" },
-            { name: "Vikram Kumar", city: "Bihar", price: "₹1499", card: "Platinum Card" },
-            { name: "Rahul J.", city: "Jaipur", price: "₹799", card: "Visa Card" },
-            { name: "Suresh Pal", city: "Madhya Pradesh", price: "₹399", card: "Master Card" },
-            { name: "Deepak M.", city: "Mumbai", price: "₹1499", card: "Platinum Card" },
-            { name: "Akash Yadav", city: "Gorakhpur", price: "₹799", card: "Visa Card" },
-            { name: "Vikas Mishra", city: "Patna", price: "₹399", card: "Master Card" },
-            { name: "Sanjay Dutt", city: "Ranchi", price: "₹1499", card: "Platinum Card" },
-            { name: "Arjun Singh", city: "Haryana", price: "₹799", card: "Visa Card" },
-            { name: "Manish Verma", city: "Punjab", price: "₹399", card: "Master Card" },
-            { name: "Vijay Thapa", city: "Dehradun", price: "₹799", card: "Visa Card" },
-            { name: "Rohit Shrivastav", city: "Varanasi", price: "₹1499", card: "Platinum Card" },
-            { name: "Ajay Dev", city: "Gaya", price: "₹399", card: "Master Card" },
-            { name: "Sunil Choudhary", city: "Jodhpur", price: "₹799", card: "Visa Card" },
-            { name: "Anil Saxena", city: "Agra", price: "₹1499", card: "Platinum Card" },
-            { name: "Vivek Tiwari", city: "Kanpur", price: "₹399", card: "Master Card" },
-            { name: "Priyanahu Raj", city: "Muzaffarpur", price: "₹799", card: "Visa Card" },
-            { name: "Alok Gupta", city: "Bareilly", price: "₹1499", card: "Platinum Card" }
+            // 20 Real & Simple Names
+            { name: "Rahul Sharma", city: "Delhi NCR", price: "₹799", card: "Visa Card" },
+            { name: "Amit Kumar", city: "Lucknow", price: "₹399", card: "Master Card" },
+            { name: "Vikram Singh", city: "Jaipur", price: "₹799", card: "Visa Card" },
+            { name: "Karan Patel", city: "Ahmedabad", price: "₹399", card: "Master Card" },
+            { name: "Deepak Raj", city: "Patna", price: "₹1499", card: "Platinum Card" },
+            { name: "Rohan Verma", city: "Mumbai", price: "₹1499", card: "Platinum Card" },
+            { name: "Sachin Mishra", city: "Kanpur", price: "₹399", card: "Master Card" },
+            { name: "Ankit Yadav", city: "Gorakhpur", price: "₹799", card: "Visa Card" },
+            { name: "Sameer Joshi", city: "Bhopal", price: "₹399", card: "Master Card" },
+            { name: "Mayank Gupta", city: "Indore", price: "₹1499", card: "Platinum Card" },
+            { name: "Hardik Choudhary", city: "Panipat", price: "₹799", card: "Visa Card" },
+            { name: "Prince Shrivastava", city: "Ranchi", price: "₹399", card: "Master Card" },
+            { name: "Suhail Khan", city: "Meerut", price: "₹799", card: "Visa Card" },
+            { name: "Aman Dubey", city: "Varanasi", price: "₹1499", card: "Platinum Card" },
+            { name: "Yash Agarwal", city: "Agra", price: "₹799", card: "Visa Card" },
+            { name: "Rohan Das", city: "Kolkata", price: "₹1499", card: "Platinum Card" },
+            { name: "Aditya Thakur", city: "Ghaziabad", price: "₹399", card: "Master Card" },
+            { name: "Vivek Anand", city: "Gaya", price: "₹799", card: "Visa Card" },
+            { name: "Manish Joshi", city: "Udaipur", price: "₹1499", card: "Platinum Card" },
+            { name: "Sanjay Rawat", city: "Dehradun", price: "₹399", card: "Master Card" },
+
+            // 20 Free Fire Gaming Names
+            { name: "Free Fire Lover", city: "Uttar Pradesh", price: "₹399", card: "Master Card" },
+            { name: "Gamer King", city: "Bihar", price: "₹1499", card: "Platinum Card" },
+            { name: "Evo M10", city: "Madhya Pradesh", price: "₹1499", card: "Platinum Card" },
+            { name: "Rai Star", city: "Haryana", price: "₹799", card: "Visa Card" },
+            { name: "Alpha Gamer", city: "Punjab", price: "₹799", card: "Visa Card" },
+            { name: "Total Gaming", city: "Aligarh", price: "₹1499", card: "Platinum Card" },
+            { name: "Sniper King", city: "Jodhpur", price: "₹399", card: "Master Card" },
+            { name: "Badge 99", city: "Muzaffarpur", price: "₹799", card: "Visa Card" },
+            { name: "Ajjubhai", city: "Bareilly", price: "₹1499", card: "Platinum Card" },
+            { name: "Vasiyo CR7", city: "Kota", price: "₹399", card: "Master Card" },
+            { name: "Pro Gamer", city: "Jhansi", price: "₹799", card: "Visa Card" },
+            { name: "OP King", city: "Mathura", price: "₹1499", card: "Platinum Card" },
+            { name: "Amitbhai YT", city: "Alwar", price: "₹399", card: "Master Card" },
+            { name: "Legendary Boy", city: "Rohtak", price: "₹799", card: "Visa Card" },
+            { name: "Headshot Master", city: "Sonipat", price: "₹1499", card: "Platinum Card" },
+            { name: "Dynamo Op", city: "Gwalior", price: "₹799", card: "Visa Card" },
+            { name: "Mortal Star", city: "Jabalpur", price: "₹399", card: "Master Card" },
+            { name: "Tonde Gamer", city: "Ajmer", price: "₹1499", card: "Platinum Card" },
+            { name: "Ninja FF", city: "Surat", price: "₹799", card: "Visa Card" },
+            { name: "Born 2 Kill", city: "Pune", price: "₹1499", card: "Platinum Card" }
         ];
 
-        // Fisher-Yates Shuffle Function to randomize names order on every page load
+        // This function fully shuffles the names every time page loads so they turn up randomly and mixed
         function shuffleArray(array) {
             for (let i = array.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
@@ -268,36 +282,36 @@
         }
 
         let notifIndex = 0;
+        let selectedCardName = "";
+        let selectedCardPrice = "";
 
-        // Smooth rotation loop switching exactly every 6.5 seconds
         function triggerLiveNotification() {
             const toast = document.getElementById('purchase-notification');
             const content = document.getElementById('notif-content');
             
-            // Show the first random name immediately based on the shuffled order
+            // Set the first display item
             const initialBuyer = fakeBuyers[notifIndex];
             content.innerHTML = `User <strong>${initialBuyer.name}</strong> from <strong>${initialBuyer.city}</strong> just activated a <span class="notif-price">${initialBuyer.price}</span> ${initialBuyer.card}!`;
             
+            // Periodically shift through array (which is already randomized)
             setInterval(() => {
                 notifIndex = (notifIndex + 1) % fakeBuyers.length;
                 const randomBuyer = fakeBuyers[notifIndex];
                 content.innerHTML = `User <strong>${randomBuyer.name}</strong> from <strong>${randomBuyer.city}</strong> just activated a <span class="notif-price">${randomBuyer.price}</span> ${randomBuyer.card}!`;
                 
                 toast.classList.add('show');
-                
-                setTimeout(() => {
-                    toast.classList.remove('show');
-                }, 3500); // Popup visibility freeze duration
-
-            }, 6500); // 6.5 seconds window interval
+                setTimeout(() => { toast.classList.remove('show'); }, 3500);
+            }, 6500);
         }
 
         window.onload = function() {
-            shuffleArray(fakeBuyers); // Shuffles names instantly when any user opens the site
+            shuffleArray(fakeBuyers); // Randomize names at load time
             triggerLiveNotification();
         };
 
         function openPayment(cardName, price) {
+            selectedCardName = cardName;
+            selectedCardPrice = price;
             document.getElementById('home-screen').style.display = 'none';
             document.getElementById('payment-terminal').style.display = 'block';
             document.getElementById('pay-card-name').innerText = cardName;
@@ -311,22 +325,18 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Live Dynamic Countdown Clock (Fixed 5 Days target baseline limit)
         let totalSeconds = (5 * 24 * 3600) + (4 * 3600) + (32 * 60) + 15; 
         let timerInterval;
 
         function startCountdown() {
             const display = document.getElementById('countdown-timer');
-            
             timerInterval = setInterval(() => {
                 if (totalSeconds <= 0) {
                     clearInterval(timerInterval);
                     display.innerText = "Verifying Details...";
                     return;
                 }
-                
                 totalSeconds--;
-
                 let days = Math.floor(totalSeconds / (24 * 3600));
                 let hours = Math.floor((totalSeconds % (24 * 3600)) / 3600);
                 let minutes = Math.floor((totalSeconds % 3600) / 60);
@@ -342,21 +352,28 @@
         }
 
         function processPayment() {
+            var nameInput = document.getElementById('user-name').value;
             var emailInput = document.getElementById('user-email').value;
             var screenshotInput = document.getElementById('payment-screenshot').files[0];
             
+            if(nameInput.trim() === "") {
+                alert("Please enter your full name!");
+                return;
+            }
+
             if(emailInput.trim() === "" || !emailInput.includes("@")) {
                 alert("Please enter a valid Gmail address to receive card details!");
                 return;
             }
 
-            // Client-side Barrier Check: Ensures screen upload is completed
             if(!screenshotInput) {
                 alert("कृपया पहले पेमेंट का स्क्रीनशॉट अपलोड करें, उसके बाद ही सबमिट करें!");
                 return;
             }
 
+            document.getElementById('display-name').innerText = "Name: " + nameInput;
             document.getElementById('display-email').innerText = "Registered Mail: " + emailInput;
+            
             document.getElementById('payment-terminal').style.display = 'none';
             document.getElementById('success-screen').style.display = 'flex';
             
